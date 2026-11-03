@@ -23,9 +23,25 @@ api.interceptors.request.use(async (config) => {
   return config;
 });
 
+let onUnauthorized = null;
+
+export const setOnUnauthorized = (handler) => {
+  onUnauthorized = handler;
+};
+
 api.interceptors.response.use(
   (response) => response,
-  (error) => Promise.reject(error)
+  async (error) => {
+    const url = error.config?.url ?? '';
+    const isCredentialAttempt = url.includes('/auth/login') || url.includes('/auth/register');
+    if (error.response?.status === 401 && !isCredentialAttempt) {
+      authToken = null;
+      await SecureStore.deleteItemAsync('authToken');
+      await SecureStore.deleteItemAsync('userData');
+      onUnauthorized?.();
+    }
+    return Promise.reject(error);
+  }
 );
 
 export const authAPI = {

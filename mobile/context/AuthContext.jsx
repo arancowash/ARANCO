@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, useEffect } from 'react';
 import * as SecureStore from 'expo-secure-store';
-import { authAPI, setAuthToken } from '../services/api';
+import { authAPI, setAuthToken, setOnUnauthorized } from '../services/api';
 
 const AuthContext = createContext(null);
 
@@ -9,6 +9,7 @@ export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    setOnUnauthorized(() => setUser(null));
     const loadUser = async () => {
       try {
         const token = await SecureStore.getItemAsync('authToken');
@@ -17,18 +18,14 @@ export const AuthProvider = ({ children }) => {
           setAuthToken(token);
           const parsed = JSON.parse(userData);
           setUser({ ...parsed, isStaff: parsed.role === 'staff' });
-          if (!parsed.role) {
-            try {
-              const meRes = await authAPI.getMe();
-              const freshUser = meRes.data.data.user;
-              await SecureStore.setItemAsync('userData', JSON.stringify(freshUser));
-              setUser({ ...freshUser, isStaff: freshUser.role === 'staff' });
-            } catch {}
-          }
+          const meRes = await authAPI.getMe();
+          const freshUser = meRes.data.data.user;
+          await SecureStore.setItemAsync('userData', JSON.stringify(freshUser));
+          setUser({ ...freshUser, isStaff: freshUser.role === 'staff' });
         }
       } catch {
-        await SecureStore.deleteItemAsync('authToken');
-        await SecureStore.deleteItemAsync('userData');
+        // A rejected token is cleared by the 401 interceptor; anything else here
+        // is a network failure, so keep the cached session and let the app retry.
       } finally {
         setLoading(false);
       }

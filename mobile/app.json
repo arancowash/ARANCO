@@ -36,7 +36,9 @@
           "imageWidth": 180,
           "resizeMode": "contain"
         }
-      ]
+      ],
+      "expo-secure-store",
+      "expo-status-bar"
     ]
   }
 }
