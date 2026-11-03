@@ -1,0 +1,42 @@
+{
+  "expo": {
+    "name": "ARANCO",
+    "slug": "quickwash",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "icon": "./assets/icon.png",
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "package": "com.quickwash.app",
+      "softwareKeyboardLayoutMode": "resize",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#0f2b46"
+      }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "27a4d26f-d951-43f9-b127-4c5f6703dbff"
+      }
+    },
+    "owner": "rohanjoshy2005",
+    "plugins": [
+      "expo-font",
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#0f2b46",
+          "image": "./assets/splash-icon.png",
+          "imageWidth": 180,
+          "resizeMode": "contain"
+        }
+      ]
+    ]
+  }
+}

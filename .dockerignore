@@ -1,0 +1,9 @@
+**/node_modules
+**/.env
+.git
+mobile
+admin
+*.apk
+.expo
+*.log
+.DS_Store

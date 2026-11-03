@@ -1,0 +1,24 @@
+Vehicle type photos
+===================
+All images from Wikimedia Commons, used under their respective
+Creative Commons licenses. Source file pages:
+
+hatchback.jpg — Suzuki Swift (2024) by Alexander-93, CC BY-SA 4.0
+  https://commons.wikimedia.org/wiki/File:Suzuki_Swift_(2024)_hybrid_DSC_6076.jpg
+
+sedan.jpg — Honda City by c M 93, CC BY-SA 3.0 de
+  https://commons.wikimedia.org/wiki/File:Honda_City_1.5_i-VTEC_V_(VIII,_Facelift)_%E2%80%93_f_22032025.jpg
+
+suv.jpg — Range Rover by Vauxford, CC BY-SA 4.0
+  https://commons.wikimedia.org/wiki/File:2022_Land_Rover_Range_Rover_SE_P440e_AWD_Automatic_3.0_Front.jpg
+
+muv.jpg — Toyota Innova Zenix by c M 93, CC BY-SA 3.0 de
+  https://commons.wikimedia.org/wiki/File:Toyota_Innova_Zenix_2.0_V_(III)_%E2%80%93_f_22032025.jpg
+
+luxury.jpg — Mercedes-Benz S-Class (W223) by Alexander Migl, CC BY-SA 4.0
+  https://commons.wikimedia.org/wiki/File:Mercedes-Benz_W223_IMG_6663.jpg
+
+other.jpg — Audi TT by Vauxford, CC BY-SA 4.0
+  https://commons.wikimedia.org/wiki/File:2019_Audi_TT_Sport_40_TFSi_S-A_2.0_Rear.jpg
+
+CC BY-SA: attribution required, share-alike for adaptations.
